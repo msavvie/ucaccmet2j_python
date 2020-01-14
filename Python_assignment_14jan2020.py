@@ -23,8 +23,8 @@ for generic_raindata in rainfall_info:  # For each measurement
         else:
             month_data[month] = rainfall
 
-        
-print(month_data)
+months_rainfall_list = list(month_data.values())
+print(months_rainfall_list)
 
-
-
+with open('seattlerainfall.json', 'w') as file:
+    json.dump(months_rainfall_list, file)
